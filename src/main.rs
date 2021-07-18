@@ -1,20 +1,16 @@
 use std::io;
 
 mod array;
+mod util_formaters;
+
+use util_formaters::Formaters;
 
 fn main() {
     loop {
         let mut input = String::new();
+        let titles = ["Exit", "Array"];
 
-        println!(
-            "
--------------------------------------
-Index
-0. Exit
-1. Array
--------------------------------------
-Input:"
-        );
+        Formaters::appendix(&titles);
         io::stdin()
             .read_line(&mut input)
             .expect("DSA number must be given");
