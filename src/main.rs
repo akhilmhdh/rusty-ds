@@ -2,13 +2,15 @@ use std::io;
 
 mod array;
 mod util_formaters;
+mod utils;
+mod vector;
 
 use util_formaters::Formaters;
 
 fn main() {
     loop {
         let mut input = String::new();
-        let titles = ["Exit", "Array"];
+        let titles = ["Exit", "Array", "Vector"];
 
         Formaters::appendix(&titles);
         io::stdin()
@@ -19,6 +21,7 @@ fn main() {
         match input {
             0 => break,
             1 => array::main(),
+            2 => vector::main(),
             _ => println!("invalid option"),
         }
     }
